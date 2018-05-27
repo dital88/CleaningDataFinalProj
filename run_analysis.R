@@ -6,7 +6,7 @@ if(!file.exists("./data")){dir.create("./data")}
 fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(fileUrl,destfile="./data/Dataset.zip")
 
-#create  the variables containing the raw datasets
+#Step 0: create  the variables containing the raw datasets
 uci_working_path <- "./UCI HAR Dataset"  
 subjectTrain = read.table(paste(uci_working_path,'/train/subject_train.txt',sep=""),header=FALSE)
 xTrain = read.table(paste(uci_working_path, '/train/x_train.txt',sep = ""),header=FALSE)
