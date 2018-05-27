@@ -43,7 +43,7 @@ names(yDataSet) <- "Activity"
 
 
 
-#Step 4(Appropriately labels the data set with descriptive variable names.)
+#Step 4(Appropriately labels the data set with descriptive variable names)
 names(subjectDataSet) <- "Subject"
 summary(subjectDataSet)
 singleDataSet <- cbind(xDataSet_mean_std, yDataSet, subjectDataSet)
@@ -64,6 +64,6 @@ names(singleDataSet) <- gsub('Freq$',"Frequency",names(singleDataSet))
 #Step 5(From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject)
 names(singleDataSet)
 
-Data2<-aggregate(. ~Subject + Activity, singleDataSet, mea)n
+Data2<-aggregate(. ~Subject + Activity, singleDataSet, mean)
 Data2<-Data2[order(Data2$Subject,Data2$Activity),]
 write.table(Data2, file = "tidydata.txt",row.name=FALSE)
